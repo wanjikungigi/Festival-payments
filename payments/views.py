@@ -1,7 +1,8 @@
-from django.http import HttpResponse, JsonResponse  
+from django.shortcuts import render
+from django.http import JsonResponse, HttpResponse
 
 def home(request):
-    return HttpResponse("Welcome to the Payments App!")  # <--- homepage
+    return render(request, "index.html")
 
 def stk_push(request):
     return JsonResponse({"status": "ok", "message": "STK push placeholder"})
